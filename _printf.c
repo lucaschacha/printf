@@ -2,6 +2,12 @@
 
 void print_buffer(char buffer[], int *buff_ind);
 
+/************************** _Printf.c *************************/
+/**
+ * _printf - Printf func to be written
+ * @format: format to requred std.
+ * Return: Printed characters.
+ */
 int _printf(const char *format, ...)
 {
 	int i, printed = 0, printed_chars = 0;
@@ -47,6 +53,11 @@ int _printf(const char *format, ...)
 	return (printed_chars);
 }
 
+/**
+ * print_buffer - Prints existing buffer content.
+ * @buffer: Array of character
+ * @buff_ind: Index to add next character to represent the length.
+ */
 void print_buffer(char buffer[], int *buff_ind)
 {
 	if (*buff_ind > 0)

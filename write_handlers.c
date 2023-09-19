@@ -13,7 +13,8 @@
  */
 int handle_write_char(char c, char buffer[],
 	int flags, int width, int precision, int size)
-{ /* character stored at left and paddind at buffer's right */
+{ 
+/* character stored at left and paddind at buffer's right */
 	int i = 0;
 	char padd = ' ';
 
@@ -183,7 +184,8 @@ int write_unsgnd(int is_negative, int ind,
 		{
 			return (write(1, &buffer[ind], length) + write(1, &buffer[0], i));
 		}
-		else /* Asign extra character to left of padding [padd>buffer]*/
+		else 
+		/* Asign extra character to left of padding [padd>buffer]*/
 		{
 			return (write(1, &buffer[0], i) + write(1, &buffer[ind], length));
 		}
@@ -230,7 +232,8 @@ int write_pointer(char buffer[], int ind, int length,
 				buffer[--ind] = extra_c;
 			return (write(1, &buffer[3], i - 3) + write(1, &buffer[ind], length));
 		}
-		else if (!(flags & F_MINUS) && padd == '0')/* extra character to left of padd */
+		else if (!(flags & F_MINUS) && padd == '0')
+		/* extra character to left of padd */
 		{
 			if (extra_c)
 				buffer[--padd_start] = extra_c;
